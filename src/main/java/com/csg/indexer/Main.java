@@ -7,6 +7,11 @@ import com.csg.indexer.parser.ContentExtractor;
 
 public class Main {
     public static void main(String[] args) {
+        if (args.length == 0) {
+            System.err.println("Usage: java -jar java-indexer.jar <file1> <file2> ...");
+            System.exit(1);
+        }
+        
         for (String fileArg : args) {
             Path path = Path.of(fileArg);
             try {
